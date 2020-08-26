@@ -1,6 +1,6 @@
-# ORB-SLAM3
+# ORB-SLAM3 江佩视觉注释版
 
-#####  ORB-SLAM2的模块解释可以在公众号中获得：
+### ORB-SLAM2的模块解释可以在公众号中获得：
 
 **[细说ORB-SLAM2系列] [1.系统基础介绍](https://mp.weixin.qq.com/s?__biz=MzUxNzA3MzI3NQ==&mid=2247483758&idx=1&sn=4ae26b1c259f0900b6774fe827a8f86e&chksm=f99cf17aceeb786c9ecfeeb695597bce5fbb87a42d6bcef30f6160932091a58e125aba6287ae&token=226741902&lang=zh_CN#rd)**
 
@@ -12,7 +12,23 @@
 
 ----------------------------------------------------------
 
+### ORB-SLAM3 与 ORB-SLAM2的异同点
 
+---
+
+### ORB-SLAM3注释进度表
+
+| 时间  | 文件                               | 备注      |
+| ----- | ---------------------------------- | --------- |
+| 27.08 | stereo-imu 加载文件 到 Tracking.cc | from 盐里 |
+|       |                                    |           |
+|       |                                    |           |
+
+
+
+-----
+
+### 系统运行
 
 ### V0.3: Beta version, 7 Aug 2020
 
@@ -222,4 +238,13 @@ Once ORB-SLAM3 has loaded the vocabulary, press space in the rosbag tab.
   rosrun rosbag fastrebag.py dataset-room1_512_16.bag dataset-room1_512_16_small_chunks.bag
   ```
 
+---------------------------------------------------------------
+
+### 如何加入我们
+
+邮箱：jiangpei_lab[at]163.com
+
+欢迎大家关注我们的公众号和支持知识星球，更多干货，我们一起创造。
+
+![jp](images/jp.png)
 
