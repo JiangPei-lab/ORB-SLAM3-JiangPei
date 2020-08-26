@@ -1,6 +1,19 @@
 # ORB-SLAM3
 
+#####  ORB-SLAM2的模块解释可以在公众号中获得：
+
+**[细说ORB-SLAM2系列] [1.系统基础介绍][https://mp.weixin.qq.com/s?__biz=MzUxNzA3MzI3NQ==&mid=2247483758&idx=1&sn=4ae26b1c259f0900b6774fe827a8f86e&chksm=f99cf17aceeb786c9ecfeeb695597bce5fbb87a42d6bcef30f6160932091a58e125aba6287ae&token=226741902&lang=zh_CN#rd]**
+
+**[细说ORB-SLAM2系列] [2.特征追踪][https://mp.weixin.qq.com/s?__biz=MzUxNzA3MzI3NQ==&mid=2247483764&idx=1&sn=5a5724ffc1cee2a73b31ee867bb2a285&chksm=f99cf160ceeb7876eb5d270ae235098f9420bdb5dd5a32612cccdc436f42ff30e211610dddbc&token=226741902&lang=zh_CN#rd]**
+
+**[细说ORB-SLAM2系列] [3.稀疏地图重建][https://mp.weixin.qq.com/s?__biz=MzUxNzA3MzI3NQ==&mid=2247483776&idx=1&sn=fd0b65558c78daf0e0f05c1758b866e6&chksm=f99cf194ceeb788216e345d0929cc3f7756331bf21506d13ce746469c4aa02b82d2fffbdddea&token=226741902&lang=zh_CN#rd]**                
+
+**[细说ORB-SLAM2系列] [4.地图更新与融合][https://mp.weixin.qq.com/s?__biz=MzUxNzA3MzI3NQ==&mid=2247483824&idx=1&sn=fe3f653cc06bd87497837f804ecdc40c&chksm=f99cf1a4ceeb78b23306719fbb74256bc6e73db1ae386554558425d9d38ebff3d990392c7ed0&token=226741902&lang=zh_CN#rd]**                
+
+
+
 ### V0.3: Beta version, 7 Aug 2020
+
 **Authors:** Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, [José M. M. Montiel](http://webdiis.unizar.es/~josemari/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/).
 
 ORB-SLAM3 is the first real-time SLAM library able to perform **Visual, Visual-Inertial and Multi-Map SLAM** with **monocular, stereo and RGB-D** cameras, using **pin-hole and fisheye** lens models. In all sensor configurations, ORB-SLAM3 is as robust as the best systems available in the literature, and significantly more accurate. 
@@ -144,14 +157,14 @@ and add at the end the following line. Replace PATH by the folder where you clon
   ```
   export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM3/Examples/ROS
   ```
-  
+
 2. Execute `build_ros.sh` script:
 
   ```
   chmod +x build_ros.sh
   ./build_ros.sh
   ```
-  
+
 ### Running Monocular Node
 For a monocular input from topic `/camera/image_raw` run node ORB_SLAM3/Mono. You will need to provide the vocabulary file and a settings file. See the monocular examples above.
 
@@ -179,7 +192,7 @@ For a stereo input from topics `/camera/left/image_raw` and `/camera/right/image
   ```
   rosrun ORB_SLAM3 Stereo_Inertial PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE ONLINE_RECTIFICATION [EQUALIZATION]	
   ```
-  
+
 ### Running RGB_D Node
 For an RGB-D input from topics `/camera/rgb/image_raw` and `/camera/depth_registered/image_raw`, run node ORB_SLAM3/RGBD. You will need to provide the vocabulary file and a settings file. See the RGB-D example above.
 
@@ -191,21 +204,20 @@ For an RGB-D input from topics `/camera/rgb/image_raw` and `/camera/depth_regist
   ```
   roscore
   ```
-  
+
   ```
   rosrun ORB_SLAM3 Stereo_Inertial Vocabulary/ORBvoc.txt Examples/Stereo-Inertial/EuRoC.yaml true
   ```
-  
+
   ```
   rosbag play --pause V1_02_medium.bag /cam0/image_raw:=/camera/left/image_raw /cam1/image_raw:=/camera/right/image_raw /imu0:=/imu
   ```
-  
+
 Once ORB-SLAM3 has loaded the vocabulary, press space in the rosbag tab.
 
 **Remark:** For rosbags from TUM-VI dataset, some play issue may appear due to chunk size. One possible solution is to rebag them with the default chunk size, for example:
   ```
   rosrun rosbag fastrebag.py dataset-room1_512_16.bag dataset-room1_512_16_small_chunks.bag
   ```
-
 
 
